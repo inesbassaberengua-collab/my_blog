@@ -99,7 +99,20 @@ Luego abrir el navegador en:
 ```text
 http://127.0.0.1:8000/
 ```
+##👤 Autores
 
+Búsqueda de autores por nombre
+Visualización de datos básicos (nombre y email)
+
+##🔐 Autenticación
+
+Registro de usuarios
+Login de usuarios
+Logout seguro
+
+##🧠 Panel de administración
+
+Gestión completa desde Django Admin
 ---
 
 ## ☁️ Despliegue
@@ -132,7 +145,18 @@ Proyecto
 ├── build.sh
 └── README.md
 ```
+##🎯 Conceptos aplicados
 
+Modelos con relaciones (ForeignKey / ManyToMany)
+Validaciones personalizadas (clean())
+Class Based Views (ListView, DetailView, CreateView, UpdateView, DeleteView)
+Templates con herencia
+Context processors
+Template tags y filtros personalizados
+URLs con namespacing
+Formularios Django con validación
+Seguridad CSRF
+Django Admin
 ---
 
 ## 🚀 Autor
