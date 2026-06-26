@@ -1,0 +1,26 @@
+html
+{% extends "base.html" %}
+
+{% block title %}{{ post.title }} · Mi Blog Django{% endblock %}
+
+{% block content %}
+    <article class="post-detail">
+        {% if post.image %}
+            <img src="{{ post.image.url }}" alt="{{ post.title }}" class="post-detail-img">
+        {% endif %}
+        <h1>{{ post.title }}</h1>
+        <p class="post-meta">Por {{ post.author.username }} · {{ post.published_date|date:"d/m/Y H:i" }}</p>
+        <div class="post-content">
+            {{ post.content|linebreaks }}
+        </div>
+
+        {% if user == post.author %}
+            <div class="post-actions">
+                <a href="{% url 'post_edit' post.pk %}" class="btn">Editar</a>
+                <a href="{% url 'post_delete' post.pk %}" class="btn btn-danger">Eliminar</a>
+            </div>
+        {% endif %}
+    </article>
+
+    <a href="{% url 'post_list' %}">&larr; Volver a entradas</a>
+{% endblock %}

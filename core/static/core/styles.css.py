@@ -1,0 +1,215 @@
+Mostrar css completo
+Mostrar css completo
+css
+:root {
+    --primary: #2563eb;
+    --primary-dark: #1d4ed8;
+    --danger: #dc2626;
+    --bg: #f8fafc;
+    --card-bg: #ffffff;
+    --text: #1e293b;
+    --border: #e2e8f0;
+}
+
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    font-family: "Segoe UI", Arial, sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+}
+
+.header {
+    background-color: var(--primary);
+    padding: 1rem 2rem;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1100px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+
+.brand {
+    color: white;
+    font-size: 1.4rem;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.nav-links {
+    display: flex;
+    gap: 1.2rem;
+    align-items: center;
+}
+
+.nav-links a, .link-button {
+    color: white;
+    text-decoration: none;
+    font-size: 0.95rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+.nav-links a:hover, .link-button:hover {
+    text-decoration: underline;
+}
+
+.logout-form { margin: 0; }
+
+.container {
+    max-width: 1100px;
+    margin: 2rem auto;
+    padding: 0 1.5rem;
+}
+
+.hero {
+    background-color: var(--card-bg);
+    border-radius: 10px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    border: 1px solid var(--border);
+}
+
+.post-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+}
+
+.post-card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 1.2rem;
+}
+
+.post-card-img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 0.8rem;
+}
+
+.post-card h3 a {
+    color: var(--primary-dark);
+    text-decoration: none;
+}
+
+.post-meta {
+    font-size: 0.85rem;
+    color: #64748b;
+}
+
+.post-detail-img {
+    width: 100%;
+    max-height: 350px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+}
+
+.post-actions {
+    margin-top: 1.5rem;
+    display: flex;
+    gap: 0.8rem;
+}
+
+.btn {
+    display: inline-block;
+    background-color: var(--primary);
+    color: white;
+    padding: 0.55rem 1.1rem;
+    border-radius: 6px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    font-size: 0.95rem;
+}
+
+.btn:hover { background-color: var(--primary-dark); }
+
+.btn-danger { background-color: var(--danger); }
+.btn-danger:hover { background-color: #b91c1c; }
+
+.form {
+    max-width: 500px;
+    background-color: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.3rem;
+    font-weight: 600;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    font-size: 0.95rem;
+}
+
+.form-errors {
+    color: var(--danger);
+    font-size: 0.85rem;
+    margin: 0.3rem 0 0;
+    padding-left: 1.1rem;
+}
+
+.help-text {
+    color: #64748b;
+    font-size: 0.8rem;
+}
+
+.search-form {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.search-form input {
+    flex: 1;
+    padding: 0.55rem;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+}
+
+.messages {
+    list-style: none;
+    padding: 0;
+}
+
+.message {
+    padding: 0.7rem 1rem;
+    border-radius: 6px;
+    margin-bottom: 1rem;
+}
+
+.message.success { background-color: #dcfce7; color: #166534; }
+.message.error { background-color: #fee2e2; color: #991b1b; }
+
+.footer {
+    text-align: center;
+    padding: 1.5rem;
+    color: #64748b;
+    font-size: 0.85rem;
+}

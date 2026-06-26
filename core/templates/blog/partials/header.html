@@ -1,0 +1,20 @@
+html
+<header class="header">
+    <nav class="navbar">
+        <a href="{% url 'home' %}" class="brand">Mi Blog</a>
+        <div class="nav-links">
+            <a href="{% url 'post_list' %}">Entradas</a>
+            {% if user.is_authenticated %}
+                <a href="{% url 'post_create' %}">Nueva entrada</a>
+                <a href="{% url 'perfil' %}">Mi perfil ({{ user.username }})</a>
+                <form action="{% url 'logout' %}" method="post" class="logout-form">
+                    {% csrf_token %}
+                    <button type="submit" class="link-button">Cerrar sesión</button>
+                </form>
+            {% else %}
+                <a href="{% url 'login' %}">Iniciar sesión</a>
+                <a href="{% url 'registro' %}">Registrarse</a>
+            {% endif %}
+        </div>
+    </nav>
+</header>

@@ -1,0 +1,29 @@
+html
+{% extends "base.html" %}
+
+{% block title %}Mi perfil{% endblock %}
+
+{% block content %}
+    <h1>Mi perfil</h1>
+    <p>Usuario: <strong>{{ user.username }}</strong> · {{ user.email }}</p>
+
+    <form method="post" enctype="multipart/form-data" class="form">
+        {% csrf_token %}
+        {% for field in form %}
+            <div class="form-group">
+                <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+                {{ field }}
+            </div>
+        {% endfor %}
+        <button type="submit" class="btn">Guardar perfil</button>
+    </form>
+
+    <h2>Mis entradas</h2>
+    <ul>
+        {% for post in user.posts.all %}
+            <li><a href="{% url 'post_detail' post.pk %}">{{ post.title }}</a></li>
+        {% empty %}
+            <li>Todavía no publicaste ninguna entrada.</li>
+        {% endfor %}
+    </ul>
+{% endblock %}

@@ -1,0 +1,30 @@
+html
+{% extends "base.html" %}
+{% load custom_filters %}
+
+{% block title %}Inicio · Mi Blog Django{% endblock %}
+
+{% block content %}
+    <section class="hero">
+        <h1>Bienvenido/a a Mi Blog</h1>
+        <p>Proyecto final del curso de Python con Django. Registrate para crear tus propias entradas.</p>
+    </section>
+
+    <h2>Últimas entradas</h2>
+    {% if posts %}
+        <div class="post-grid">
+            {% for post in posts %}
+                <article class="post-card">
+                    {% if post.image %}
+                        <img src="{{ post.image.url }}" alt="{{ post.title }}" class="post-card-img">
+                    {% endif %}
+                    <h3><a href="{% url 'post_detail' post.pk %}">{{ post.title }}</a></h3>
+                    <p class="post-meta">Por {{ post.author.username }} · {{ post.published_date|date:"d/m/Y" }}</p>
+                    <p>{{ post.content|resumen:20 }}</p>
+                </article>
+            {% endfor %}
+        </div>
+    {% else %}
+        <p>Todavía no hay entradas publicadas.</p>
+    {% endif %}
+{% endblock %}
