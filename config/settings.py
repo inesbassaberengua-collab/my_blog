@@ -17,7 +17,7 @@ SECRET_KEY = os.environ.get(
     "django-insecure-clave-de-desarrollo-cambiar-en-produccion"
 )
 
-DEBUG = True
+DEBUG ="RENDER" not in os.environ
 
 ALLOWED_HOSTS = []
 
@@ -119,7 +119,7 @@ STORAGES = {
         "BACKEND": "django.core.files.storage.FileSystemStorage",
     },
     "staticfiles": {
-        "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
+        "BACKEND": "django.contrib.staticfiles.storage.StaticFilesStorage",
     },
 }
 
