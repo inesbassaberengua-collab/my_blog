@@ -17,7 +17,7 @@ SECRET_KEY = os.environ.get(
     "django-insecure-clave-de-desarrollo-cambiar-en-produccion"
 )
 
-DEBUG = "RENDER" not in os.environ
+DEBUG = True
 
 ALLOWED_HOSTS = []
 
@@ -131,3 +131,17 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 LOGIN_URL = "login"
 LOGIN_REDIRECT_URL = "home"
 LOGOUT_REDIRECT_URL = "home"
+
+LOGGING = {
+    "version": 1,
+    "disable_existing_loggers": False,
+    "handlers": {
+        "console": {
+            "class": "logging.StreamHandler",
+        },
+    },
+    "root": {
+        "handlers": ["console"],
+        "level": "DEBUG",
+    },
+}
